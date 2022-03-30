@@ -8,7 +8,6 @@ module.exports.getWeather = async (req, res) => {
     const data = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?lat=18.6298&lon=73.7997&appid=${api_key}&units=metric`
     );
-    console.log(data?.data.list.length);
     res.status(constantConfig.SUCCESS_CODE).json({
       status: constantConfig.SUCCESS,
       message: `Here is your weather`,
