@@ -14,12 +14,8 @@ app.get("/", (req, res) => {
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const productRoutes = require("./api/routes/productRoutes");
-const userRoutes = require("./api/routes/userRoutes");
-const refreshTokenRoutes = require("./api/routes/refreshToken");
-app.use("/products", productRoutes);
-app.use("/user", userRoutes);
-app.use("/auth", refreshTokenRoutes);
+const weatherRoutes = require("./api/routes/weatherRoutes");
+app.use("/weather", weatherRoutes);
 
 app.listen(port, () => {
   console.log(`App listening on port ${port}!`);
